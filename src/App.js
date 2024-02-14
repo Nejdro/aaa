@@ -50,10 +50,12 @@ function App() {
       </Modal>
       <div className="App">
         <div className="inside">
-          {!firstClickOnNo ? (
-            <img src={dog1} className="App-logo" alt="logo" />
-          ) : !yes ? (
-            <img src={dog2} className="App-logo" alt="logo" />
+          {!yes ? (
+            !firstClickOnNo ? (
+              <img src={dog1} className="App-logo" alt="logo" />
+            ) : (
+              <img src={dog2} className="App-logo" alt="logo" />
+            )
           ) : (
             <img src={dog3} className="App-logo" alt="logo" />
           )}
@@ -62,7 +64,7 @@ function App() {
               <span className="text">Czy zostaniesz moją walentynką?</span>
             ) : (
               <span className="text">
-                Super!!!!!!!! Do zobaczenie niedługo :)))))
+                Super!!!!!!!! Do zobaczenia niedługo :)))))
               </span>
             )}
             <div>
@@ -71,7 +73,7 @@ function App() {
                   Tak
                 </button>
               )}
-              {!firstClickOnNo && (
+              {!firstClickOnNo && !yes && (
                 <button className="no" onClick={openModal}>
                   Nie
                 </button>
